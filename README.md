@@ -6,15 +6,15 @@ A machine learning project that predicts Pokémon battle outcomes using combat s
 
 Given two Pokémon and their base attributes (HP, Attack, Defense, Special Attack, Special Defense, Speed), this model predicts which one wins the battle — and identifies which attributes matter most.
 
-**Key finding:** Speed is by far the dominant predictor of battle success, accounting for ~90% of feature importance in the final model. Faster Pokémon strike first, creating a compounding advantage that outweighs most other attributes.
+**Key finding:** Speed is by far the dominant predictor of battle success, accounting for ~90% of feature importance in the best-performing model. Faster Pokémon strike first, creating a compounding advantage that outweighs most other attributes.
 
 ## Dataset
 
 - `pokemon.csv` — Base stats for 800 Pokémon
-- `combats.csv` — 150,000+ battle records with outcomes
-- `tests.csv` — Held-out test set for final evaluation
+- `combats.csv` — 50,000 battle records with outcomes
+- `tests.csv` — Held-out test set of 10,000 matchups for final evaluation
 
-Data sourced from [Kaggle](https://www.kaggle.com/).
+Data sourced from [Kaggle](https://www.kaggle.com/datasets/terminus7/pokemon-challenge).
 
 ## Approach
 
@@ -29,7 +29,7 @@ Data sourced from [Kaggle](https://www.kaggle.com/).
 | Linear Regression | 0.9008 | 0.0566 |
 | Decision Tree | 0.9780 | 0.0490 |
 | Random Forest | 0.9733 | 0.0444 |
-| Neural Network | — | 0.1095 |
+| Neural Network | — | 0.0937 |
 
 Random Forest achieved the lowest Mean Absolute Error and was selected for final predictions.
 
@@ -55,7 +55,7 @@ A separate model trained on Speed alone confirmed its dominance — performance 
 - Python
 - Pandas, NumPy
 - Scikit-learn (Random Forest, Decision Tree, Linear Regression)
-- Keras / TensorFlow (Neural Network)
+- TensorFlow / Keras (Neural Network)
 - Matplotlib / Seaborn (visualizations)
 - Jupyter Notebook
 
